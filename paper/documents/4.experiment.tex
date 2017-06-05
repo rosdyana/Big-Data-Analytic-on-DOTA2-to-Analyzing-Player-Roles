@@ -29,43 +29,32 @@ Most of player roles depend on the lane (see figure \ref{fig:map_lane}) which is
 \label{fig:map_jungle}
 \end{figure}
 
+\renewcommand{\arraystretch}{1.5}
+\setlength{\tabcolsep}{12pt}
 \begin{table}[]
-\centering
-\begin{tabular}{|l|c|}
-\hline
-\rowcolor[HTML]{BBDAFF} 
-\multicolumn{1}{|c|}{\cellcolor[HTML]{BBDAFF}\textbf{Attribute}} & \textbf{Number of Folds} \\ \hline
-KDA Ratio* = (Kills + Assists) / (Deaths + 1)                    & 10                       \\ \hline
-\rowcolor[HTML]{FFFFC7} 
-Last Hits*                                                       & 10                       \\ \hline
-Early Ganks*+                                                    & 10                       \\ \hline
-\rowcolor[HTML]{FFFFC7} 
-Number of Support Items*+                                        & 10                       \\ \hline
-Damage to Neutral Creeps*+                                       & 10                       \\ \hline
-\rowcolor[HTML]{FFFFC7} 
-Damage to Regular Creeps*+                                       & 10                       \\ \hline
-Lane Partners*+                                                  & 10                       \\ \hline
-\rowcolor[HTML]{FFFFC7} 
-Kills*                                                           & 9                        \\ \hline
-Experience*                                                      & 5                        \\ \hline
-\rowcolor[HTML]{FFFFC7} 
-Deaths*                                                          & 5                        \\ \hline
-Assists                                                          & 5                        \\ \hline
-\rowcolor[HTML]{FFFFC7} 
-Team Fight Participation*+                                       & 4                        \\ \hline
-Early Movement (Visited Cells)*+                                 & 4                        \\ \hline
-\rowcolor[HTML]{FFFFC7} 
-Damage to Heroes*+                                               & 4                        \\ \hline
-Solo Lane+                                                       & 2                        \\ \hline
-\rowcolor[HTML]{FFFFC7} 
-Damage to Towers+                                                & 1                        \\ \hline
-Chosen Hero                                                      & 0                        \\ \hline
-\rowcolor[HTML]{FFFFC7} 
-Gold                                                             & 0                        \\ \hline
-\end{tabular}
-\caption{Attributes evaluated for classification. Attributes marked with + are not directly
-available from replays. Attributes marked with {*} were finally selected for classification.
-Number of Folds shows in how many folds an attribute was selected by WEKA’s
-WrapperSubsetEval class using 10-fold cross-validation for each classification.}
+\caption{Attributes evaluated for classification. Attributes marked with + are not directly available from replays. Attributes marked with {*} were finally selected for classification. Number of Folds shows in how many folds an attribute was selected by WEKA’s WrapperSubsetEval class using 10-fold cross-validation for each classification.}
 \label{table:table1}
+\centering
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Attribute}                            & \textbf{Number of Folds} \\ \hline
+KDA Ratio* = (Kills + Assists) / (Deaths + 1) & 10                       \\ \hline
+Last Hits*                                    & 10                       \\ \hline
+Early Ganks*+                                 & 10                       \\ \hline
+Number of Support Items*+                     & 10                       \\ \hline
+Damage to Neutral Creeps*+                    & 10                       \\ \hline
+Damage to Regular Creeps*+                    & 10                       \\ \hline
+Lane Partners*+                               & 10                       \\ \hline
+Kills*                                        & 9                        \\ \hline
+Experience*                                   & 5                        \\ \hline
+Deaths*                                       & 5                        \\ \hline
+Assists                                       & 5                        \\ \hline
+Team Fight Participation*+                    & 4                        \\ \hline
+Early Movement (Visited Cells)*+              & 4                        \\ \hline
+Damage to Heroes*+                            & 4                        \\ \hline
+Solo Lane+                                    & 2                        \\ \hline
+Damage to Towers+                             & 1                        \\ \hline
+Chosen Hero                                   & 0                        \\ \hline
+Gold                                          & 0                        \\ \hline
+\end{tabular}
 \end{table}
