@@ -4,12 +4,12 @@
 \subsection{Data Collection}
 \label{sec:datacollection}
 
-We are using ROpenDota by Rosdyana Kusuma to built our data set. ROpenDota is an API wrapper service for OpenDota in R. We labeling players from replay and the replay based on The International 2016 and Kiev Major, which contains 8419 labeled players. Using replay data from professional players will guarantee our data set from low level data.
+We are using ROpenDota by Rosdyana Kusuma to built our data set. ROpenDota is an API wrapper service for OpenDota in R. We labeling players from replay and the replay based on The International 2016 and Kiev Major, which contains 8419 labeled players. Using replay data from professional players will guarantee our data set from low-level data.
 
 \subsection{Attribute Construction and Evaluation}
 \label{sec:attconsandeval}
 
-Attributes for evaluation is presented in table \ref{table:table1}. While some attributes correspond directly to summary data, attributes that capture positional information the fighting behavior require more complex processing of the replay data. Different attribute filters implemented in the Java library WEKA \cite{hall2009weka} to determine the best set of attributes. Our results with the \textit{WrapperSubsetEval} class with best-first search are presented in table 1. We have chosen this algorithm for our final attribute selection because it resulted in the highest accuracy with our labeled data set. For classification we selected all attributes that were present in at least four folds, excluding assists, as this resulted in the overall highest accuracy. In the following sections we describe the algorithms and heuristics we developed to calculate the attributes that cannot be directly obtained from replay files. They can be grouped into five rough categories: space and movement, early ganks, team fights, support items, and damage types. Not all of the attributes we describe in this section were finally chosen to be used for classification within this work but they might prove valuable for future works.
+Attributes for evaluation is presented in table \ref{table:table1}. While some attributes correspond directly to summary data, attributes that capture positional information the fighting behavior require more complex processing of the replay data. Different attribute filters implemented in the Java library WEKA \cite{hall2009weka} to determine the best set of attributes. Our results with the \textit{WrapperSubsetEval} class with best-first search are presented in table 1. We have chosen this algorithm for our final attribute selection because it resulted in the highest accuracy with our labeled data set. For classification, we selected all attributes that were present in at least four folds, excluding assists, as this resulted in the overall highest accuracy. In the following sections, we describe the algorithms and heuristics we developed to calculate the attributes that cannot be directly obtained from replay files. They can be grouped into five rough categories: space and movement, early ganks, team fights, support items, and damage types. Not all of the attributes we describe in this section were finally chosen to be used for classification within this work but they might prove valuable for future works.
 
 \begin{figure}
 \centering
@@ -18,7 +18,7 @@ Attributes for evaluation is presented in table \ref{table:table1}. While some a
 \label{fig:map_lane}
 \end{figure}
 
-\textbf{Player Lane} Most of player roles depend on the lane (see figure \ref{fig:map_lane}) which is the most active in the early game. Player lane information also provides the constructor for the other attributes, e.g., the \textit{lane partners}. In the early game, players commonly have three main positions: \textit{top lane}, \textit{mid lane}, or \textit{bottom lane}. In additional, the \textit{jungle} areas also can be used ( see figure \ref{fig:map_jungle}). Or, players can have a \textit{roaming} position, it means that they will move around the map instead of focusing in specific lane.
+\textbf{Player Lane} Most of the player roles depend on the lane (see figure \ref{fig:map_lane}) which is the most active in the early game. Player lane information also provides the constructor for the other attributes, e.g., the \textit{lane partners}. In the early game, players commonly have three main positions: \textit{top lane}, \textit{mid lane}, or \textit{bottom lane}. In additional, the \textit{jungle} areas also can be used ( see figure \ref{fig:map_jungle}). Or, players can have a \textit{roaming} position, it means that they will move around the map instead of focusing in a specific lane.
 
 \begin{figure}
 \centering
@@ -57,11 +57,11 @@ Gold                                          & 0                        \\ \hli
 \end{tabular}
 \end{table}
 
-\textbf{Lane Partners and Solo Lane} To calculate the lane attribute from lane partners and solo lane can be determine by comparing the number of players. Player in \textit{jungle} position or \textit{roaming} are always assigned with zero lane partners, while players who is sharing the other lane, such as top, mid or bottom lane are corresponding with number of their \textit{teammates} in the current lane. Solo lane attribute included in our attributes as an alternative to the lane partners. The value of this attribute will be true if a player is assigned to one of the tree main lanes without any teammate and otherwise false.
+\textbf{Lane Partners and Solo Lane} To calculate the lane attribute from lane partners and solo lane can be determined by comparing the number of players. The player in \textit{jungle} position or \textit{roaming} are always assigned with zero lane partners, while players who are sharing the other lane, such as top, mid or bottom lane are corresponding with a number of their \textit{teammates} in the current lane. Solo lane attribute included in our attributes as an alternative to the lane partners. The value of this attribute will be true if a player is assigned to one of the tree main lanes without any teammate and otherwise false.
 
 \textbf{Support Items} Player who considering playing as support mostly must buy support items. Many items in \textit{Dota 2} are useful for support player. List of common suppor items: \textit{Courier}, \textit{Flying Courier}, \textit{Observer Ward} and \textit{Sentry Ward}. 
 
-\textbf{Damage Types} We categorized damage type based on player roles and requirement of other attributes: damage to tower, damage to heroes, damage to regular creeps, damage to neutral creeps and damage to ancient creeps.
+\textbf{Damage Types} We categorized damage type based on player roles and requirement of other attributes: damage to the tower, damage to heroes, damage to regular creeps, damage to neutral creeps and damage to ancient creeps.
 
 \subsection{Feature Normalization}
 \label{sec:featurenorm}
@@ -100,7 +100,7 @@ The advantage of Min-Max normalization is that it preserves the relationship amo
 
 Linear scaling to unit range is special case of min-max normalization in which max\(\,x_{new}\)=1 and min\(\,x_{new}\)=0.
 
-\textbf{Softmax Scaling}, In addition to linear scaling, non linear normalization techniques may be used in cases where data are not evenly distributed around the mean \cite{theodoridis2010introduction}. In such cases the transformations based on nonlinear (i.e., exponential, logarithmic, sigmoid etc) functions can be used to map the data within specified intervals. One such popular technique is so called softmax scaling which squashes the data value non linearly in the interval [0,1]. the normalized feature is given by;
+\textbf{Softmax Scaling}, In addition to linear scaling, nonlinear normalization techniques may be used in cases where data are not evenly distributed around the mean \cite{theodoridis2010introduction}. In such cases, the transformations based on nonlinear (i.e., exponential, logarithmic, sigmoid etc) functions can be used to map the data within specified intervals. One such popular technique is so called softmax scaling which squashes the data value non linearly in the interval [0,1]. the normalized feature is given by:
 
 \begin{equation}
 \hat{x}_i=\frac{1}{1+e^{-y}}

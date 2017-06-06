@@ -4,7 +4,7 @@
 \subsection{Result}
 \label{sec:results}
 
-We trained and evaluated several different classifier using 10-fold cross-validation and independent test on our data set. The classifiers was based on existing works and complemented by commonly used classification approaches. It included: \textit{Random forest decision trees}, \textit{logistic regression}, \textit{support vector machines with sequential minimal optimization}, \textit{naive bayes classifier}, and \textit{bayesian networks}. We are using WEKA library and tool for the technical platform. The classifiers were evaluated according to several established performance metric (accuracy, mean absolute error (MAE) \cite{willmott2005advantages}, and area under ROC (AUC) \cite{huang2005using}.
+We trained and evaluated several different classifiers using 10-fold cross-validation and independent test on our data set. The classifiers were based on existing works and complemented by commonly used classification approaches. It included: \textit{Random forest decision trees}, \textit{logistic regression}, \textit{support vector machines with sequential minimal optimization}, \textit{naive bayes classifier}, and \textit{bayesian networks}. We are using WEKA library and tool for the technical platform. The classifiers were evaluated according to several established performance metric (accuracy, mean absolute error (MAE) \cite{willmott2005advantages}, and area under ROC (AUC) \cite{huang2005using}.
 
 \renewcommand{\arraystretch}{1.5}
 \setlength{\tabcolsep}{8pt}
@@ -31,7 +31,7 @@ Z-Score Normalization                          & Random forest                 &
 }
 \end{table}
 
-Table \ref{table:table2} list the highest accuracy from 10-fold cross-validation and independent test of our works. Random forest is the most stable with good performance from our works. The accuracy result also reasonable. it means the good accuracy is not over fitting after checking the cross-validation with the independent test results.
+Table \ref{table:table2} list the highest accuracy from 10-fold cross-validation and independent test of our works. Random forest is the most stable with good performance from our works. The accuracy result also reasonable. it means the good accuracy is not overfitting after checking the cross-validation with the independent test results.
 
 \renewcommand{\arraystretch}{1.5}
 \setlength{\tabcolsep}{8pt}
@@ -59,7 +59,9 @@ Random Forest                   & 91.17\%            & 94.52\%           & 0.118
 }
 \end{table}
 
-Table \ref{table:table3}, comparison result of our works with previous works. Which is our works is quite better in full set classes. Random forest still dominating for the accuracy result.
+Table \ref{table:table3}, the comparison result of our works with previous works. Which is our works is quite better in full set classes. Random forest still dominating for the accuracy result.
+
+Classify the player roles is not easy. We asking \textit{Dota 2} experts to manually classify the player roles. The responses were highly divergent among them. This illustrates that the classification tasks is difficult, even for human experts. Our data set from the professional tournament (
 
 \subsection{Conclusion}
 \label{sec:conclusion}
