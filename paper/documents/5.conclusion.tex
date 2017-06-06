@@ -1,4 +1,67 @@
 \section{Results and Conclusion}
 \label{sec:conclusion}
 
-This is conclusion
+\subsection{Result}
+\label{sec:results}
+
+We trained and evaluated several different classifier using 10-fold cross-validation and independent test on our data set. The classifiers was based on existing works and complemented by commonly used classification approaches. It included: \textit{Random forest decision trees}, \textit{logistic regression}, \textit{support vector machines with sequential minimal optimization}, \textit{naive bayes classifier}, and \textit{bayesian networks}. We are using WEKA library and tool for the technical platform. The classifiers were evaluated according to several established performance metric (accuracy, mean absolute error (MAE) \cite{willmott2005advantages}, and area under ROC (AUC) \cite{huang2005using}.
+
+\renewcommand{\arraystretch}{1.5}
+\setlength{\tabcolsep}{8pt}
+\begin{table}[]
+\centering
+\caption{Summary of 10-fold cross -validation and independent test accuracies with feature normalization data set.}
+\label{table:table2}
+\resizebox{0.5\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Full Classes}}    & \multicolumn{2}{c|}{\textbf{10-Folds Cross Validation}} & \multicolumn{2}{c|}{\textbf{Independent Test}} \\ \hline
+Original                                       & Random forest                 & 89.37\%                 & Random forest                & 88.54\%         \\ \hline
+Linear Scale                                   & Random forest                 & 89.77\%                 & Logistic Regression          & 81.65\%         \\ \hline
+Min-Max Normalization                          & Random forest                 & 89.53\%                 & Logistic Regression          & 81.65\%         \\ \hline
+Softmax Scaling                                & Random forest                 & 80.13\%                 & Random forest                & 79.81\%         \\ \hline
+Z-Score Normalization                          & Random forest                 & 89.68\%                 & Random forest                & 86.52\%         \\ \hline
+\multicolumn{1}{|c|}{\textbf{Reduced Classes}} & \multicolumn{2}{c|}{\textbf{10-Folds Cross Validation}} & \multicolumn{2}{c|}{\textbf{Independent Test}} \\ \hline
+Original                                       & Random forest                 & 94.52\%                 & Random forest                & 93.53\%         \\ \hline
+Linear Scale                                   & Random forest                 & 94.33\%                 & Random forest                & 88.48\%         \\ \hline
+Min-Max Normalization                          & Random forest                 & 94.39\%                 & Random forest                & 88.78\%         \\ \hline
+Softmax Scaling                                & Random forest                 & 92.59\%                 & Random forest                & 92.34\%         \\ \hline
+Z-Score Normalization                          & Random forest                 & 89.40\%                 & Random forest                & 92.10\%         \\ \hline
+\end{tabular}%
+}
+\end{table}
+
+Table \ref{table:table2} list the highest accuracy from 10-fold cross-validation and independent test of our works. Random forest is the most stable with good performance from our works. The accuracy result also reasonable. it means the good accuracy is not over fitting after checking the cross-validation with the independent test results.
+
+\renewcommand{\arraystretch}{1.5}
+\setlength{\tabcolsep}{8pt}
+\begin{table}[]
+\centering
+\caption{Comparison with previous works.}
+\label{table:table3}
+\resizebox{0.5\textwidth}{!}{%
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\textbf{Classifier}             & \multicolumn{2}{c|}{\textbf{Accuracy}} & \multicolumn{2}{c|}{\textbf{Mean Absolute Error}} & \multicolumn{2}{c|}{\textbf{Wgt. Avg. AUC}} \\ \hline
+\textbf{Full set of classes}    & *                  & **                & *                       & **                      & *                    & **                   \\ \hline
+Random Forest                   & 76.27\%            & 89.37\%           & 0.0905                  & 0.0691                  & 0.943                & 0.984                \\ \hline
+Logistic Regression             & 75.85\%            & 82.64\%           & 0.0826                  & 0.1013                  & 0.947                & 0.962                \\ \hline
+SMO                             & 75.28\%            & 81.65\%           & 0.1753                  & 0.2503                  & 0.926                & 0.91                 \\ \hline
+Bayesian Networks               & 72.03\%            & 70.54\%           & 0.0801                  & 0.122                   & 0.933                & 0.927                \\ \hline
+Naive Bayes                     & 70.76\%            & 74.43\%           & 0.0769                  & 0.1055                  & 0.933                & 0.95                 \\ \hline
+\textbf{Reduced set of classes} & *                  & **                & *                       & **                      & *                    & **                   \\ \hline
+Bayesian Networks               & 96.58\%            & 92.61\%           & 0.0322                  & 0.0919                  & 0.995                & 0.973                \\ \hline
+SMO                             & 96.15\%            & 88.15\%           & 0.2308                  & 0.1185                  & 0.975                & 0.875                \\ \hline
+Logistic Regression             & 96.15\%            & 88.15\%           & 0.0381                  & 0.1662                  & 0.993                & 0.953                \\ \hline
+Naive Bayes                     & 95.58\%            & 89.84\%           & 0.0383                  & 0.2319                  & 0.994                & 0.89                 \\ \hline
+Random Forest                   & 91.17\%            & 94.52\%           & 0.1182                  & 0.0916                  & 0.985                & 0.987                \\ \hline
+\end{tabular}%
+}
+\end{table}
+
+Table \ref{table:table3}, comparison result of our works with previous works. Which is our works is quite better in full set classes. Random forest still dominating for the accuracy result.
+
+\subsection{Conclusion}
+\label{sec:conclusion}
+
+Not yet :v

@@ -66,4 +66,44 @@ Gold                                          & 0                        \\ \hli
 \subsection{Feature Normalization}
 \label{sec:featurenorm}
 
-An approach of \textit{Feature Normalization} to enhance the accuracy result proved by Singh \cite{singh2015investigations}
+An approach of \textit{Feature Normalization} to enhance the accuracy result proved by Singh \cite{singh2015investigations}. We applied feature normalization on this paper to cross check if this methodology can help to tweak accuracy of classification results. Various normalization techniques in this study are:
+
+\textbf{Z-Score Normalization}, A very common techniques to normalize the feature to zero mean and unit variance is Z-score normalization \cite{jayalakshmi2011statistical}. It is a linear technique which initially mean ( \(\bar{x}\) ) and standard deviation ( \(\sigma\) ) of the specific feature values are computed using:
+
+\begin{equation}
+\bar{x}=\frac{1}{N}\sum_{i-1}^{N}x_{i}
+\end{equation}
+
+and,
+\begin{equation}
+\sigma^2=\frac{1}{N-1}\sum_{i-1}^{N}(x_{i}-\bar{x})^2
+\end{equation}
+
+the normalized feature is then given by:
+\begin{equation}
+\bar{x}_i=\frac{x_i-\bar{x}}{\sigma}
+\end{equation}
+
+\textbf{Min-Max Normalization}, This technique performs a linear transformation on the original data. For mapping a value, of an attribute \(x_i\) from range [min(\(x_i\)), max(\(x_i\))] to a new range [min \(x_new,\),max \(x_new\), the normalized feature is given by:
+
+\begin{equation}
+\hat{x}_i=\frac{X_i-min(x_i)}{max(x_i)-min(x_i)}
+\end{equation}
+
+The advantage of Min-Max normalization is that it preserves the relationship among the original data values \cite{manikandan2013achieving}. In this study \(max\,x_{new}=1\) and \(min\,x_{new}=-1\) is used.
+
+\textbf{Linar Scaling to Unit Range}, This is also a linear transformation technique to normalize data in range[0,1]. Given a lower bound min(\(x_i\)) and upper bound max(\(x_i\)) of an attribute \(x_i\), the normalized value is given by:
+
+\begin{equation}
+\hat{x}_i=\frac{x_i-min(x_i)}{max(x_i)-min(x_i)}
+\end{equation}
+
+Linear scaling to unit range is special case of min-max normalization in which max\(\,x_{new}\)=1 and min\(\,x_{new}\)=0.
+
+\textbf{Softmax Scaling}, In addition to linear scaling, non linear normalization techniques may be used in cases where data are not evenly distributed around the mean \cite{theodoridis2010introduction}. In such cases the transformations based on nonlinear (i.e., exponential, logarithmic, sigmoid etc) functions can be used to map the data within specified intervals. One such popular technique is so called softmax scaling which squashes the data value non linearly in the interval [0,1]. the normalized feature is given by;
+
+\begin{equation}
+\hat{x}_i=\frac{1}{1+e^{-y}}
+\end{equation}
+
+where \(y=\frac{x_i-\bar{x}}{r\sigma}\) and \textit{r} is a user defined parameter. in the above equation that for small values of y i.e., for values of \(x_i\) closer to mean, y is an approximately linear function. Values away from mean are squashed exponentially.
