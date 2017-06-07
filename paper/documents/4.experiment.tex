@@ -87,7 +87,7 @@ the normalized feature is then given by:
 \textbf{Min-Max Normalization}, This technique performs a linear transformation on the original data. For mapping a value, of an attribute \(x_i\) from range [min(\(x_i\)), max(\(x_i\))] to a new range [min \(x_new,\),max \(x_new\), the normalized feature is given by:
 
 \begin{equation}
-\hat{x}_i=\frac{X_i-min(x_i)}{max(x_i)-min(x_i)}
+\resizebox{.8\hsize}{!}{$\hat{x}_i=\frac{x_i-min(x_i)}{max(x_i)-min(x_i)}(max\,x_{new}-min\,x_{new})+min\,x_{new}$}
 \end{equation}
 
 The advantage of Min-Max normalization is that it preserves the relationship among the original data values \cite{manikandan2013achieving}. In this study \(max\,x_{new}=1\) and \(min\,x_{new}=-1\) is used.

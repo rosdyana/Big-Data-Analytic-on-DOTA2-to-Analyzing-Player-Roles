@@ -37,7 +37,7 @@ Table \ref{table:table2} list the highest accuracy from 10-fold cross-validation
 \setlength{\tabcolsep}{8pt}
 \begin{table}[]
 \centering
-\caption{Comparison with previous works.}
+\caption{Comparison with previous works. Value with (*) is the previous work results, and marked by (**) is our work results.}
 \label{table:table3}
 \resizebox{0.5\textwidth}{!}{%
 \begin{tabular}{|c|c|c|c|c|c|c|}
@@ -66,4 +66,4 @@ Classify the player roles is not easy. We asking \textit{Dota 2} experts to manu
 \subsection{Conclusion and Future Work}
 \label{sec:conclusion}
 
-Not yet :v
+In this paper, we presented and discussed an approach to apply machine learning techniques for the classification of player roles in \textit{Dota 2}. We believe that our approach should be applicable to another MOBA games, which is share many similar key game mechanics. With 89.37\% in Random forest for 10 fold cross validation and 88.54\% for our independent test result shows that it is still promising and reasonable result. Applying Feature normalization on our classification has proved that Linear scaling with 89.77\%, but sadly, this accuracy result is not really enhanced significantly. Reducing our full classes was very successful with an accuracy of 94.52\% on Random forest, which is already suitable for many applications. Again, Random forest proved to be very stable and well suited to this domain. In the future we plan to look more closely at the mentioned problem of identifying the game phase and transitions more reliably. It might also be beneficial to detect roles not for a whole match but rather for phases or sections to account for role changes during the game.
